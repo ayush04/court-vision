@@ -1,0 +1,44 @@
+<div class="panel panel-default" ng-controller="ProfilePageController">
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="clearfix text-center m-t">
+                    <div class="inline">
+                        <div class="thumb-xl">
+                            <img src="./images/user.jpg" class="img-circle" alt="...">
+                        </div>
+                        <div class="h4 m-t m-b-xs">{{username}}</div>
+                    </div>                      
+                </div>
+                <footer class="panel-footer bg-info text-center no-padder">
+                    <div class="row no-gutter">
+                        <div class="col-xs-2">    
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="wrapper">
+                                <span class="m-b-xs h3 block text-white">{{isCoach? 'Coach': 'Player' }}</span>
+                                <small class="text-muted">Role</small>
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="wrapper">
+                                <span class="m-b-xs h3 block text-white">{{profile.basketsScored !== undefined? profile.basketsScored: 0}}</span>
+                                <small class="text-muted">Baskets</small>
+                            </div>
+                        </div>
+                        <div class="col-xs-2">
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading">User Details</div>
+    <div class="panel-body">
+        <div ng-include="'./components/profile/profile.html'"></div>
+    </div>
+</div>

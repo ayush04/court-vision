@@ -1,0 +1,72 @@
+<nav class="container-fluid navbar cv-header box-shadow" ng-controller="HeaderController">
+    <a class="cv-logo" ui-sref="main.home"><img src="./images/logo.png"></img></a>
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+            <a>
+                <span increase-font class="btn-increase-font">A<sup>+</sup>|</span>
+                <span decrease-font class="btn-decrease-font">A<sup>-</sup></span>
+            </a>
+        </li>
+        <li class="dropdown open" dropdown="">
+            <a href="" class="dropdown-toggle" dropdown-toggle="" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-bell-o fa-fw"></i>
+                <span class="visible-xs-inline">Notifications</span>
+                <span class="badge badge-sm up bg-danger pull-right-xs">{{notifications.length}}</span>
+            </a>
+            <div class="dropdown-menu cv-w-xl animated fadeInUp">
+                <div class="panel bg-white">
+                    <div class="panel-heading b-light bg-light">
+                        <strong>You have <span>{{notifications.length}}</span> notifications</strong>
+                    </div>
+                    <div class="list-group">
+                        <a href="" class="media list-group-item" ng-repeat="notification in notifications">
+                            <span class="media-body block m-b-none">
+                                {{notification.content}}<br>
+                                <button class="btn btn-primary text-muted" ng-click="markNotificationAsRead(notification.notificationId)">Mark as read</button>
+                            </span>
+                        </a>
+                    </div>
+                    <!--div class="panel-footer text-sm">
+                        <a href="" data-toggle="class:show animated fadeInRight">See all the notifications</a>
+                    </div-->
+                </div>
+            </div>
+        </li>
+
+        <li class="dropdown" uib-dropdown is-open="status.isopen">
+            <a href class="dropdown-toggle clear" uib-dropdown-toggle>
+                <span class="avatar pull-right">
+                    <img src="/cv/images/user.jpg" alt="...">
+                    <i class="on border-white bottom"></i>
+                </span>
+                <span class="hidden-sm hidden-md">{{username}}</span>
+            </a>
+            <!-- dropdown -->
+            <!--ul class="dropdown-menu animated fadeInRight w" uib-dropdown-menu role="menu">
+                <li>
+                    <a href>
+                        <span>Settings</span>
+                    </a>
+                </li>
+                <li ng-class="(fitbitClientId === '') ? 'disabled' : ''">
+                    <a href ng-click="launchFitbitLogin()">
+                        <span>Fitbit</span>
+                    </a>
+                </li>
+                <li>
+                    <a ui-sref="main.profile">Profile</a>
+                </li>
+                <li>
+                    <a ui-sref="main.myteam">My team</a>
+                </li>
+                <li>
+                    <a ui-sref="app.docs">Help</a>
+                </li>
+                <li class="divider"></li>
+                <li><a ui-sref="main.home">Home</a></li>
+                <li><a href ng-click="logout()">Logout</a></li>
+            </ul>
+            <!-- / dropdown -->
+        </li>
+    </ul>
+</nav>

@@ -1,0 +1,33 @@
+<div ng-controller="MyTeamController">
+    <div class="panel no-border" ng-if="isCoach">
+        <div class="panel-heading wrapper b-b b-light">
+            <h4 class="font-thin m-t-none m-b-none">Teammates</h4>              
+        </div>
+        <div class="panel-body">
+            <table class="table m-b-none">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Name</th>
+                        <th>Role</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="member in myTeamMembers">
+                        <td><img src="./images/user.jpg" alt="User Image" class="avatar team-avatar"></td>
+                        <td>{{member.userName}}</td>
+                        <td>
+                            <span class="badge badge-sm bg-danger" ng-if="!member.isPlayer">COACH</span>
+                            <span class="badge badge-sm bg-danger" ng-if="member.isPlayer">PLAYER</span>
+                        </td>
+                        <td>
+                            <button class="btn btn-primary btn-rounded btn-sm margin-top-xs" 
+                    ng-if="showAccessButton(member.userId)" ng-click="grantAccess(member.userId)">Grant Access</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

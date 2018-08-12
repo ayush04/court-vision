@@ -1,0 +1,16 @@
+{
+    "name": "Court-Vision",
+    "version": "0.0.1",
+    "description": "An app to measure performance of Wheelchair basketball players",
+    "dependencies": {
+        "angular": "1.6.6",
+        "angular-bootstrap-npm": "0.14.3",
+        "angular-file-upload": "2.5.0",
+        "angular-route": "1.6.6",
+        "angular-ui-bootstrap": "2.5.0",
+        "npm": "^6.1.0",
+        "textangular": "^1.5.16",
+        "ui-select": "0.19.8",
+        "venturocket-angular-slider": "0.3.2"
+    }
+}

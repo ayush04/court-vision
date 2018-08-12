@@ -1,0 +1,21 @@
+<div ng-controller="HomePageController" style="padding-top: 30px;">
+    <div class="row">
+        <div class="col-lg-8"><div ng-include="'./components/live-match/live.html'"></div></div>
+        <div class="col-lg-4"><div ng-include="'./components/match-list/match-list.html'"></div></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12"> 
+            <div ng-include="'./components/match-stats/match-stats.html'"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div ng-include="'./components/match-stats/pass-accuracy.html'"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div ng-include="'./components/my-team/my-team.html'"></div>
+        </div>
+    </div>
+</div>

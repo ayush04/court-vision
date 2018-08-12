@@ -1,0 +1,40 @@
+<div class="box" ng-controller="LiveMatchController">
+    <div class="box-header with-border">
+        <h3 class="box-title">{{currentMatchTeams[0]}} VS {{currentMatchTeams[1]}}</h3>
+        <a ui-sref="main.graph({matchId: '{{currentMatch}}'})" class="btn btn-sm btn-default btn-flat pull-right">Match Details</a>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+        <div class="row">
+            <slider
+                ng-model="range.currentTime"
+                ng-model-range="range.maxTime"
+                floor="{{range.startTime}}"
+                step="10"
+                ceiling="{{range.endTime}}" style="width: 90%">
+            </slider>
+            <button class="btn btn-primary purple" ng-click="refresh()">
+                <i class="fa fa-play"></i>
+            </button>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="live-graph" ng-click="pause()">
+                    <span ng-repeat="player in players">
+                        <div class="square purple" ng-class="'player{{player.userId}}'">{{player.userName}}</div>
+                    </span>
+                    <div class="ball circle red">Ball</div>
+                    <div class="playpause" ng-show="!progress">
+                        <i class="fa fa-play-circle" ng-click="play();$event.stopPropagation()"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- ./box-body -->
+    <div class="box-footer clearfix" style="">
+        <a ui-sref="main.graph({matchId: '{{currentMatch}}'})" class="btn btn-sm btn-default btn-flat pull-right">View Match Details</a>
+    </div>
+</div>

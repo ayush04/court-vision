@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app="app">
+    <head>
+        <title>Court Vision</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="./libs/anime.js"></script>
+        <script src="./libs/angular.min.js"></script>
+        <script src="./libs/angular-touch.min.js"></script>
+        <script src="./libs/angular-animate.min.js"></script>
+        <script src="./libs/angular-ui-router.min.js"></script>
+        <script src="./libs/angular-bootstrap.min.js"></script>
+        <script src="./libs/angular-bootstrap-tpls.min.js"></script>
+        <script src="./libs/textAngular-rangy.min.js"></script>
+        <script src="./libs/textAngular-sanitize.min.js"></script>
+        <script src="./libs/textAngular.min.js"></script>
+        <script src="./libs/angular-file-upload.min.js"></script>
+        <script src="./libs/select.min.js"></script>
+        <script src="./libs/angular.easypiechart.js"></script>
+        <script src="./libs/angular-slider.min.js"></script>
+        <script src="./libs/heatmap.min.js"></script>
+        <script src="./libs/calendar.js"></script>
+        <script type="text/javascript" src="./libs/jquery.min.js"></script>
+        <script type="text/javascript" src="./libs/moment.min.js"></script>
+        <script type="text/javascript" src="./libs/fullcalendar.min.js"></script>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script>google.charts.load('current', {'packages':['line', 'corechart']});</script>
+        <script src="./libs/angular-loading-overlay.js"></script>
+        <script src="./application/application-config.js"></script>
+        <script src="./application/application.js"></script>
+        <script src="./application/application-router.js"></script>
+        <script src="./application/application-directives.js"></script>
+        <script src="./services/http-service.js"></script>
+        <script src="./services/utils.js"></script>
+        <script src="./services/login-service.js"></script>
+        <script src="./services/user-service.js"></script>
+        <script src="./services/events-service.js"></script>
+        <script src="./services/game-service.js"></script>
+        <script src="./services/player-service.js"></script>
+        <script src="./services/team-service.js"></script>
+        <script src="./services/notification-service.js"></script>
+        <script src="./pages/home/home-page-controller.js"></script>
+        <script src="./pages/graph/graph-page-controller.js"></script>
+        <script src="./pages/profile/profile-page-controller.js"></script>
+        <script src="./components/login/login-controller.js"></script>
+        <script src="./components/signup/signup-controller.js"></script>
+        <script src="./components/home/home-controller.js"></script>
+        <script src="./components/header/header-controller.js"></script>
+        <script src="./components/court/court-controller.js"></script>
+        <script src="./components/live-match/live-match-controller.js"></script>
+        <script src="./components/menu/menu-controller.js"></script>
+        <script src="./components/graph/graph-controller.js"></script>
+        <script src="./components/player-stats/player-stats-controller.js"></script>
+        <script src="./components/fitbit/fitbit-controller.js"></script>
+        <script src="./components/profile/profile-controller.js"></script>
+        <script src="./components/my-team/my-team-controller.js"></script>
+        <script src="./components/calendar/calendar-controller.js"></script>
+        <script src="./components/match-stats/match-stats-controller.js"></script>
+        <script src="./components/match-list/match-list-controller.js"></script>
+    </head>
+    <body>
+        <div ui-view bs-loading-overlay
+	bs-loading-overlay-delay="3000" style="position:relative" class="app bg-light"></div>
+        <link href="./css/bootstrap.css" rel="stylesheet" type="text/css" />
+        <link href="./css/fonts.css" rel="stylesheet" type="text/css" />
+        <link href="./css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <link href="./css/textAngular.css" rel="stylesheet" type="text/css" />
+        <link href="./css/select.min.css" rel="stylesheet" type="text/css" />
+        <link href="./css/angular-slider.css" rel="stylesheet" type="text/css" />
+        <link href="./css/application.css" rel="stylesheet" type="text/css" />
+        <link href="./css/animate.css" rel="stylesheet" type="text/css" />
+        <link href="./css/fullcalendar.css" rel="stylesheet" type="text/css" />
+    </body>
+</html>

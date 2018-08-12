@@ -1,0 +1,40 @@
+<div class="aside-wrap bg-black" ng-controller="MenuController">
+    <a ui-sref="main.home" class="navbar-brand text-lt">  
+        <span class="hidden-folded m-l-xs ng-binding">CourtVision</span>
+    </a>
+    <div class="navi-wrap">
+        <!-- user -->
+        <div class="clearfix hidden-xs text-center" id="aside-user">
+            <div class="dropdown wrapper" dropdown>
+                <a ui-sref="main.profile">
+                    <span class="thumb-lg w-auto-folded avatar-profile m-t-sm">
+                        <img src="./images/user.jpg" class="img-full" alt="...">
+                    </span>
+                </a>
+                <a href ui-sref="main.profile" class="dropdown-toggle hidden-folded" dropdown-toggle>
+                    <span class="clear">
+                        <a class="block m-t-sm" ui-sref="main.profile" href>
+                            <strong class="font-bold text-lt">{{username | camelCase}}</strong> 
+                        </a>
+                        <span class="text-muted text-xs block">{{isCoach === 'true'? 'Coach': 'Player'}}</span>
+                    </span>
+                </a>
+                
+            </div>
+            <div class="line dk hidden-folded"></div>
+        </div>
+        <!-- / user -->
+        <ul class="nav ng-scope">
+            <li>
+                <a ui-sref="main.calendar" href="#/cv/calendar">
+                    <i class="glyphicon glyphicon-calendar icon text-info-dker"></i>
+                    <span class="font-bold ng-scope">Calendar</span>
+                </a>
+            </li>    
+        </ul>
+
+        <!-- aside footer -->
+        <div class="wrapper m-t">
+            <!-- / aside footer -->
+        </div>
+    </div>

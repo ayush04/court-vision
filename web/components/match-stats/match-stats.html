@@ -1,0 +1,46 @@
+<div class="row" ng-controller="MatchStatsController">
+    <div class="col-lg-6 col-md-6 col-xs-12">
+        <div class="info-box bg-pink">
+            <div class="icon-box">
+                <i class="fa fa-2x fa-dribbble"></i>
+            </div>
+            <div class="info-box-content">
+                <h4 class="number">{{baskets}}</h4>
+                <p class="info-text">Baskets</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-xs-12">
+        <div class="info-box bg-blue">
+            <div class="icon-box">
+                <i class="fa fa-2x fa-clock-o"></i>
+            </div>
+            <div class="info-box-content">
+                <h4 class="number">{{gameDuration | time}}</h4>
+                <p class="info-text">Duration</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-xs-12">
+        <div class="info-box bg-green">
+            <div class="icon-box">
+                <i class="fa fa-2x fa-check-square-o"></i>
+            </div>
+            <div class="info-box-content">
+                <h4 class="number">{{passAccuracy | percentage: 2}}</h4>
+                <p class="info-text">Pass Accuracy</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-xs-12">
+        <div class="info-box bg-purple">
+            <div class="icon-box">
+                <i class="fa fa-2x fa-trophy"></i>
+            </div>
+            <div class="info-box-content">
+                <h4 class="number">{{topScorer}}</h4>
+                <p class="info-text">Top Scorer</p>
+            </div>
+        </div>
+    </div>
+</div>

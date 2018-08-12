@@ -1,0 +1,28 @@
+<!--Previous match list--> 
+<div class="box box-info" ng-controller="MatchListController">
+    <div class="box-header with-border">
+        <h3 class="box-title">Previous Matches</h3>
+        <a href="javascript:void(0)" class="btn btn-sm btn-default btn-flat pull-right">View All Games</a>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+        <div class="table-responsive">
+            <table class="table table-striped m-b-none">
+                <thead>
+                    <tr>
+                        <th>Teams</th>
+                        <th>Played On</th>                    
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="game in games" ng-class="currentMatchId === game.gameId? 'focussed': ''">
+                        <td><a href ui-sref="main.home({matchId: '{{game.gameId}}'})">{{teams[game.team1]}} VS {{teams[game.team2]}}</a></td>
+                        <td>{{game.playedOn | date: 'medium'}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- /.table-responsive -->
+    </div>
+    <!-- /.box-body -->
+</div>

@@ -1,0 +1,45 @@
+<div ng-controller="CalendarController">
+    <div ui-calendar="uiConfig.calendar" config="uiConfig.calendar" ng-model="eventSources" calendar="myCalendar"></div>
+
+    <div class="bg-primary text-white"><p class="margin-left-sm">Click on date to create an event<p></div>
+
+    <div class="cv-calendar event animated fadeInUp" ng-show="newEvent==true">
+        <div class="panel panel-default">
+            <div class="panel-heading font-bold">New Event</div>
+            <div class="panel-body">
+                <form class="bs-example form-horizontal ng-pristine ng-valid">
+                    <div class="form-group">
+                        <label class="col-lg-2 control-label">Event Title</label>
+                        <div class="col-lg-10">
+                            <input class="form-control" ng-model="eventTitle">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-2 control-label">Event Description</label>
+                        <div class="col-lg-10">
+                            <textarea class="form-control" ng-model="eventDesc"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group event-time">
+                        <label class="col-lg-2 control-label">Start Date</label>
+                        <div class="col-lg-10">
+                            <span class="alert alert-info"><em class="ng-binding">{{eventDate}}</em></span>
+                            <label class="control-label">From</label>
+                            <timepicker ng-model="eventStartTime" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
+                            <label class="control-label">To</label>
+                            <timepicker ng-model="eventEndTime" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-4 col-sm-offset-2">
+                            <button type="submit" class="btn btn-default" ng-click="newEvent=false">Cancel</button>
+                            <button type="submit" class="btn btn-primary" ng-click="addNewEvent()">Notify</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>

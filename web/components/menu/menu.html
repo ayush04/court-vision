@@ -1,0 +1,28 @@
+<nav class="navbar cv-navbar" ng-controller="MenuController">
+    <div class="container-fluid">
+        <ul class="nav navbar-nav">
+            <li>
+                <a href ui-sref="main.home">
+                    <i class="fa fa-home"></i>
+                    <span>Home</span>
+                </a>
+            </li>
+            <li ng-class="(fitbitClientId === '') ? 'disabled' : ''">
+                <a href ng-click="launchFitbitLogin()">
+                    <i class="fa fa-gear"></i>
+                    <span>Fitbit</span>
+                </a>
+            </li>
+            <li>
+                <a href ui-sref="main.profile">
+                    <i class="fa fa-user"></i>
+                    <span>Profile</span>
+                </a>
+            </li>
+            <li><a href ng-click="logout()">
+                    <i class="fa fa-sign-out"></i>
+                    <span>Logout</span></a>
+            </li>
+        </ul>
+    </div>
+</nav>

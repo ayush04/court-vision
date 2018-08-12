@@ -1,0 +1,70 @@
+<div ng-controller="GraphController">
+    <div class="row" ng-repeat="player in players">
+        <div class="col-md-9">
+            <div id="player{{player.userId}}_chart" class="panel panel-default"></div>
+        </div>
+        <div class='col-md-3'>
+            <div class="panel panel-default">
+                <div class="panel-heading">Player Stats</div>
+                <table class="table table-striped m-b-none">
+                    <tbody>
+                        <tr>
+                            <td>
+                                Total Baskets
+                            </td>
+                            <td>
+                                {{playerStats[player.userId].totalBaskets}} 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Total distance covered
+                            </td>
+                            <td>
+                                {{playerStats[player.userId].totalDistanceCovered | number:2}} m
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Average Speed
+                            </td>
+                            <td>
+                                {{playerStats[player.userId].averageSpeed | number:2}} m/sec
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Calories Burnt
+                            </td>
+                            <td>
+                                {{caloriesBurnt | number:2}} kcal
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row" ng-repeat="player in players">
+        <div class="col-md-6 panel panel-primary no-padding">
+            <div class="panel-heading">{{player.userName}}</div>
+            <div id="player{{player.userId}}_speed_quarter" class="panel-body"></div>
+        </div>
+        <div class="col-md-6 panel panel-primary no-padding">
+            <div class="panel-heading">{{player.userName}}</div>
+            <div id="player{{player.userId}}_distance_quarter" class="panel-body"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div id="player_speed" class="panel panel-primary no-padding"></div>
+    </div>
+    <div class="row">
+        <div id="heart_rate" class="panel panel-primary no-padding"></div>
+    </div>
+    <div class="panel panel-primary no-padding" ng-repeat="player in players">
+        <div class="panel-heading">Position Heatmap - {{player.userName}}</div>
+        <div class="panel-body heatmapContainer">
+            <div id="heatmap_{{player.userId}}" class="col-md-12 heatmap"></div>
+        </div>
+    </div>
+</div>
