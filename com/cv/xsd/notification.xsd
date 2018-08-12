@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.0"
+           targetNamespace="http://bindings.cv.com/ws/model/gen/notification" 
+           xmlns="http://bindings.cv.com/ws/model/gen/notification" 
+           elementFormDefault="qualified">
+  	
+    <xs:complexType name="notification" >
+        <xs:sequence>
+            <xs:element name="notificationData" type="notificationdata" minOccurs="1" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+	
+    <xs:complexType name="notificationdata">
+        <xs:sequence>
+            <xs:element name="notificationId" type="xs:long" minOccurs="1" maxOccurs="1" />
+            <xs:element name="createdBy" type="xs:long" minOccurs="1" maxOccurs="1" />
+            <xs:element name="createdFor" type="xs:long" minOccurs="1" maxOccurs="1" />
+            <xs:element name="notificationType" type="xs:int" minOccurs="1" maxOccurs="1" />
+            <xs:element name="whenCreated" type="xs:long" minOccurs="1" maxOccurs="1" />
+            <xs:element name="title" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="content" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="isRead" type="xs:int" minOccurs="1" maxOccurs="1" />
+            <xs:element name="whenRead" type="xs:long" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

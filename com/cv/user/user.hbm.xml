@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.cv.user">
+    <class name="UserData" table="USERS" catalog="root">
+        <id name="userId" type="java.lang.Long">
+            <column name="USER_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="userName" type="string">
+            <column name="USERNAME" length="30"/>
+        </property>
+        <property name="firstName" type="string">
+            <column name="FIRST_NAME" length="30"/>
+        </property>
+        <property name="lastName" type="string">
+            <column name="LAST_NAME" length="30"/>
+        </property>
+        <property name="password" type="string">
+            <column name="PASSWORD" length="300"/>
+        </property>
+        <property name="emailAddress" type="string">
+            <column name="EMAIL_ADDRESS" length="100"/>
+        </property>
+        <property name="whenCreated" type="java.lang.Long">
+            <column name="WHEN_CREATED" />
+        </property>
+        <property name="whenModified" type="java.lang.Long">
+            <column name="WHEN_MODIFIED" />
+        </property>
+        <property name="lastAccessed" type="java.lang.Long">
+            <column name="LAST_ACCESSED" />
+        </property>
+        <property name="isLoggedIn" type="integer">
+            <column name="IS_LOGGEDIN" />
+        </property>
+        <property name="isDeleted" type="integer">
+            <column name="IS_DELETED" />
+        </property>
+        <property name="isPlayer" type="integer">
+            <column name="IS_PLAYER" />
+        </property>
+    </class>
+</hibernate-mapping>

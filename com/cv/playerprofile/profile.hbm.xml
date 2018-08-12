@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.cv.playerprofile">
+    <class name="ProfileData" table="PLAYER_PROFILE" catalog="root">
+        <id name="userId" type="java.lang.Long">
+            <column name="USER_ID" />
+        </id>
+        <property name="height" type="java.lang.Float">
+            <column name="HEIGHT" />
+        </property>
+        <property name="weight" type="java.lang.Float">
+            <column name="WEIGHT" />
+        </property>
+        <property name="basketsScored" type="integer">
+            <column name="BASKETS_SCORED" />
+        </property>
+        <property name="totalGamesPlayed" type="integer">
+            <column name="TOTAL_GAMES" />
+        </property>
+        <property name="fitbitEnabled" type="integer">
+            <column name="FITBIT_ENABLED" />
+        </property>
+        <property name="fitbitClientId" type="string">
+            <column name="FITBIT_CLIENT_ID" length="20" />
+        </property>
+        <property name="role" type="string">
+            <column name="ROLE" length="20" />
+        </property>
+        <property name="isDeleted" type="integer">
+            <column name="IS_DELETED" />
+        </property>
+        <property name="whenDeleted" type="java.lang.Long">
+            <column name="WHEN_DELETED" />
+        </property>
+        <property name="whenModified" type="java.lang.Long">
+            <column name="WHEN_MODIFIED" />
+        </property>
+    </class>
+</hibernate-mapping>

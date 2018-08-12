@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.cv.mapping">
+    <class name="PlayerTeamMappingData" table="PLAYER_TEAM_MAPPING" catalog="root">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="userId" type="java.lang.Long">
+            <column name="USER_ID" />
+        </property>
+        <property name="teamId" type="java.lang.Long">
+            <column name="TEAM_ID" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.cv.attachment">
+    <class name="AttachmentData" table="ATTACHMENT" catalog="root">
+        <id name="attachmentId" type="java.lang.Long">
+            <column name="ATTACHMENT_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="userId" type="java.lang.Long">
+            <column name="USER_ID" />
+        </property>
+        <property name="attachmentName" type="string">
+            <column name="ATTACHMENT_NAME" length="100"/>
+        </property>
+        <property name="content" type="binary">
+            <column name="CONTENT"/>
+        </property>
+        <property name="attachmentFormat" type="string">
+            <column name="ATTACHMENT_FORMAT" length="10"/>
+        </property>
+        <property name="whenCreated" type="java.lang.Long">
+            <column name="WHEN_CREATED" />
+        </property>
+        <property name="isDeleted" type="integer">
+            <column name="IS_DELETED" />
+        </property>
+        <property name="whenDeleted" type="java.lang.Long">
+            <column name="WHEN_DELETED" />
+        </property>
+    </class>
+</hibernate-mapping>

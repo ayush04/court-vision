@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.cv.calendar">
+    <class name="CalendarData" table="CALENDAR" catalog="root">
+        <id name="eventId" type="java.lang.Long">
+            <column name="EVENT_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="createdBy" type="java.lang.Long">
+            <column name="CREATED_BY" />
+        </property>
+        <property name="title" type="string">
+            <column name="TITLE" length="500"/>
+        </property>
+        <property name="startTime" type="java.lang.Long">
+            <column name="START_TIME" />
+        </property>
+        <property name="endTime" type="java.lang.Long">
+            <column name="END_TIME" />
+        </property>
+        <property name="location" type="string">
+            <column name="LOCATION" length="300"/>
+        </property>
+        <property name="whenCreated" type="java.lang.Long">
+            <column name="WHEN_CREATED" />
+        </property>
+        <property name="allDay" type="integer">
+            <column name="ALL_DAY" />
+        </property>
+        <property name="details" type="string">
+            <column name="DETAILS" length="1000"/>
+        </property>
+    </class>
+</hibernate-mapping>

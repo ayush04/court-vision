@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.cv.events">
+    <class name="EventTypeData" table="EVENT_TYPE" catalog="root">
+        <id name="eventType" type="java.lang.Long">
+            <column name="EVENT_TYPE" />
+            <generator class="identity" />
+        </id>
+        <property name="eventName" type="string">
+            <column name="EVENT_NAME" length="200"/>
+        </property>
+    </class>
+</hibernate-mapping>

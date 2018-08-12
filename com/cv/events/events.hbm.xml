@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.cv.events">
+    <class name="EventsData" table="EVENTS" catalog="root">
+        <id name="eventId" type="java.lang.Long">
+            <column name="EVENT_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="gameId" type="java.lang.Long">
+            <column name="GAME_ID" />
+        </property>
+        <property name="userId" type="java.lang.Long">
+            <column name="USER_ID" />
+        </property>
+        <property name="eventTime" type="java.lang.Long">
+            <column name="EVENT_TIME" />
+        </property>
+        <property name="eventType" type="java.lang.Long">
+            <column name="EVENT_TYPE" />
+        </property>
+        <property name="eventValue" type="string">
+            <column name="EVENT_VALUE" length="100"/>
+        </property>
+        <property name="eventValue2" type="string">
+            <column name="EVENT_VALUE_2" length="100"/>
+        </property>
+        <property name="eventValue3" type="string">
+            <column name="EVENT_VALUE_3" length="100"/>
+        </property>
+        <property name="eventValue4" type="string">
+            <column name="EVENT_VALUE_4" length="1000"/>
+        </property>
+    </class>
+</hibernate-mapping>

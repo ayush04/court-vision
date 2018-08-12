@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.cv.role">
+    <class name="RoleData" table="USER_ROLE" catalog="root">
+        <id name="roleId" type="java.lang.Long">
+            <column name="ROLE_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="roleName" type="string">
+            <column name="ROLE_NAME" length="200"/>
+        </property>
+    </class>
+</hibernate-mapping>

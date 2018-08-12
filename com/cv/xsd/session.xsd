@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.0"
+           targetNamespace="http://bindings.cv.com/ws/model/gen/session" 
+           xmlns="http://bindings.cv.com/ws/model/gen/session" 
+           elementFormDefault="qualified">
+  	
+    <xs:complexType name="session" >
+        <xs:sequence>
+            <xs:element name="sessionData" type="sessiondata" minOccurs="1" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+	
+    <xs:complexType name="sessiondata" >
+        <xs:sequence>
+            <xs:element name="userId" type="xs:long" minOccurs="1" maxOccurs="1" />
+            <xs:element name="sesionId" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="httpSessionId" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="sessionStartTime" type="xs:long" minOccurs="1" maxOccurs="1" />
+            <xs:element name="sessionEndTime" type="xs:long" minOccurs="1" maxOccurs="1" />
+            <xs:element name="isValid" type="xs:int" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

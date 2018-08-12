@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.0"
+           targetNamespace="http://bindings.cv.com/ws/model/gen/user" 
+           xmlns="http://bindings.cv.com/ws/model/gen/user" 
+           elementFormDefault="qualified">
+  	
+    <xs:complexType name="user" >
+        <xs:sequence>
+            <xs:element name="userData" type="userdata" minOccurs="1" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+	
+    <xs:complexType name="userdata">
+        <xs:sequence>
+            <xs:element name="userId" type="xs:long" minOccurs="1" maxOccurs="1" />
+            <xs:element name="userName" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="firstName" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="lastName" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="isDeleted" type="xs:int" minOccurs="1" maxOccurs="1" />
+            <xs:element name="isCoach" type="xs:int" minOccurs="1" maxOccurs="1" />
+            <xs:element name="password" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="whenCreated" type="xs:long" minOccurs="1" maxOccurs="1" />
+            <xs:element name="whenModified" type="xs:long" minOccurs="1" maxOccurs="1" />
+            <xs:element name="lastAccessed" type="xs:long" minOccurs="1" maxOccurs="1" />
+            <xs:element name="isLoggedIn" type="xs:int" minOccurs="1" maxOccurs="1" />
+            <xs:element name="emailAddress" type="xs:string" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

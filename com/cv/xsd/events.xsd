@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.0"
+           targetNamespace="http://bindings.cv.com/ws/model/gen/events" 
+           xmlns="http://bindings.cv.com/ws/model/gen/events" 
+           elementFormDefault="qualified">
+  	
+    <xs:complexType name="events" >
+        <xs:sequence>
+            <xs:element name="eventsData" type="eventsdata" minOccurs="1" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+	
+    <xs:complexType name="eventsdata">
+        <xs:sequence>
+            <xs:element name="eventId" type="xs:long" minOccurs="1" maxOccurs="1" />
+            <xs:element name="gameId" type="xs:long" minOccurs="1" maxOccurs="1" />
+            <xs:element name="userId" type="xs:long" minOccurs="1" maxOccurs="1" />
+            <xs:element name="eventTime" type="xs:long" minOccurs="1" maxOccurs="1" />
+            <xs:element name="eventType" type="xs:long" minOccurs="1" maxOccurs="1" />
+            <xs:element name="eventValue" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="eventValue2" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="eventValue3" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="eventValue4" type="xs:string" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

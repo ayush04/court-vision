@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.0"
+           targetNamespace="http://bindings.cv.com/ws/model/gen/attachment" 
+           xmlns="http://bindings.cv.com/ws/model/gen/attachment" 
+           elementFormDefault="qualified">
+  	
+    <xs:complexType name="attachment">
+        <xs:sequence>
+            <xs:element name="attachmentData" type="attachmentdata" minOccurs="1" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+	
+    <xs:complexType name="attachmentdata">
+        <xs:sequence>
+            <xs:element name="attachmentId" type="xs:long" minOccurs="1" maxOccurs="1" />
+            <xs:element name="userId" type="xs:long" minOccurs="1" maxOccurs="1" />
+            <xs:element name="attachmentName" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="attachmentFormat" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="whenCreated" type="xs:long" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

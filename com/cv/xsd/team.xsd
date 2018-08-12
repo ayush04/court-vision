@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.0"
+           targetNamespace="http://bindings.cv.com/ws/model/gen/team" 
+           xmlns="http://bindings.cv.com/ws/model/gen/team" 
+           elementFormDefault="qualified">
+  	
+    <xs:complexType name="team" >
+        <xs:sequence>
+            <xs:element name="teamData" type="teamdata" minOccurs="1" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+	
+    <xs:complexType name="teamdata">
+        <xs:sequence>
+            <xs:element name="teamId" type="xs:long" minOccurs="1" maxOccurs="1" />
+            <xs:element name="teamName" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="userData" type="userdata" minOccurs="1" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="userdata">
+        <xs:sequence>
+            <xs:element name="userId" type="xs:long" minOccurs="1" maxOccurs="1" />
+            <xs:element name="userName" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="firstName" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="lastName" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="isPlayer" type="xs:int" minOccurs="1" maxOccurs="1" />
+            <xs:element name="isLoggedIn" type="xs:int" minOccurs="1" maxOccurs="1" />
+            <xs:element name="emailAddress" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="isCoach" type="xs:int" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

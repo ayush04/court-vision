@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.cv.team">
+    <class name="TeamData" table="TEAM" catalog="root">
+        <id name="teamId" type="java.lang.Long">
+            <column name="TEAM_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="teamName" type="string">
+            <column name="TEAM_NAME" length="200"/>
+        </property>
+        <property name="whenCreated" type="java.lang.Long">
+            <column name="WHEN_CREATED" />
+        </property>
+        <property name="isDeleted" type="integer">
+            <column name="IS_DELETED" />
+        </property>
+        <property name="whenDeleted" type="java.lang.Long">
+            <column name="WHEN_DELETED" />
+        </property>
+    </class>
+</hibernate-mapping>

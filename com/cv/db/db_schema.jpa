@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" v="4.9" status="GENERATED" persistenceUnitName="DEFAULT_PU" sm="false" id="_15331195476781" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
+    <jpa:entity abs="false" class="Attachment" v="true" xre="false" m="false" rootElement="_15331195476781" id="_15331195476942">
+        <jpa:attributes>
+            <jpa:basic optional="false" attribute-type="String" v="true" name="attachmentName" id="_153311954769416">
+                <jpa:column name="ATTACHMENT_NAME" unique="false" nullable="false" insertable="true" updatable="true" table="ATTACHMENT" length="100"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.io.Serializable" v="true" name="content" id="_153311954769417">
+                <jpa:column name="CONTENT" unique="false" nullable="true" insertable="true" updatable="true" table="ATTACHMENT"/>
+                <jpa:lob/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="attachmentFormat" id="_153311954769418">
+                <jpa:column name="ATTACHMENT_FORMAT" unique="false" nullable="true" insertable="true" updatable="true" table="ATTACHMENT" length="10"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.math.BigInteger" v="true" name="whenCreated" id="_153311954769419">
+                <jpa:column name="WHEN_CREATED" unique="false" nullable="true" insertable="true" updatable="true" table="ATTACHMENT"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Short" v="true" name="isDeleted" id="_153311954769420">
+                <jpa:column name="IS_DELETED" unique="false" nullable="true" insertable="true" updatable="true" table="ATTACHMENT"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.math.BigInteger" v="true" name="whenDeleted" id="_153311954769421">
+                <jpa:column name="WHEN_DELETED" unique="false" nullable="true" insertable="true" updatable="true" table="ATTACHMENT"/>
+            </jpa:basic>
+            <jpa:many-to-one connected-entity-id="_153311954769413" connected-attribute-id="_153311954769494" v="true" name="userId" id="_153311954769422">
+                <jpa:join-column name="USER_ID" rc="USER_ID" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </jpa:many-to-one>
+            <jpa:id attribute-type="Long" v="true" name="attachmentId" id="_153311954769415">
+                <jpa:column name="ATTACHMENT_ID" unique="false" nullable="false" insertable="true" updatable="true" table="ATTACHMENT"/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="ATTACHMENT"/>
+    </jpa:entity>
+    <jpa:entity abs="false" class="Events" v="true" xre="false" m="false" rootElement="_15331195476781" id="_15331195476943">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="java.math.BigInteger" v="true" name="userId" id="_153311954769424">
+                <jpa:column name="USER_ID" unique="false" nullable="true" insertable="true" updatable="true" table="EVENTS"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.math.BigInteger" v="true" name="eventTime" id="_153311954769425">
+                <jpa:column name="EVENT_TIME" unique="false" nullable="true" insertable="true" updatable="true" table="EVENTS"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="eventValue" id="_153311954769426">
+                <jpa:column name="EVENT_VALUE" unique="false" nullable="true" insertable="true" updatable="true" table="EVENTS" length="100"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="eventValue2" id="_153311954769427">
+                <jpa:column name="EVENT_VALUE_2" unique="false" nullable="true" insertable="true" updatable="true" table="EVENTS" length="100"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="eventValue3" id="_153311954769428">
+                <jpa:column name="EVENT_VALUE_3" unique="false" nullable="true" insertable="true" updatable="true" table="EVENTS" length="100"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="eventValue4" id="_153311954769429">
+                <jpa:column name="EVENT_VALUE_4" unique="false" nullable="true" insertable="true" updatable="true" table="EVENTS" length="1000"/>
+            </jpa:basic>
+            <jpa:many-to-one connected-entity-id="_15331195476944" connected-attribute-id="_153311954769434" v="true" name="eventType" id="_153311954769430">
+                <jpa:join-column name="EVENT_TYPE" rc="EVENT_TYPE" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </jpa:many-to-one>
+            <jpa:many-to-one connected-entity-id="_15331195476949" connected-attribute-id="_153311954769459" v="true" name="gameId" id="_153311954769431">
+                <jpa:join-column name="GAME_ID" rc="GAME_ID" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </jpa:many-to-one>
+            <jpa:id attribute-type="Long" v="true" name="eventId" id="_153311954769423">
+                <jpa:column name="EVENT_ID" unique="false" nullable="false" insertable="true" updatable="true" table="EVENTS"/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="EVENTS"/>
+    </jpa:entity>
+    <jpa:entity abs="false" class="EventType" v="true" xre="false" m="false" rootElement="_15331195476781" id="_15331195476944">
+        <jpa:attributes>
+            <jpa:basic optional="false" attribute-type="String" v="true" name="eventName" id="_153311954769433">
+                <jpa:column name="EVENT_NAME" unique="false" nullable="false" insertable="true" updatable="true" table="EVENT_TYPE" length="200"/>
+            </jpa:basic>
+            <jpa:one-to-many own="false" connected-entity-id="_15331195476943" connected-attribute-id="_153311954769430" v="true" name="eventsCollection" id="_153311954769434"/>
+            <jpa:id attribute-type="Long" v="true" name="eventType" id="_153311954769432">
+                <jpa:column name="EVENT_TYPE" unique="false" nullable="false" insertable="true" updatable="true" table="EVENT_TYPE"/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="EVENT_TYPE"/>
+    </jpa:entity>
+    <jpa:entity abs="false" class="PlayerGameMapping" v="true" xre="false" m="false" rootElement="_15331195476781" id="_15331195476945">
+        <jpa:attributes>
+            <jpa:many-to-one connected-entity-id="_15331195476949" connected-attribute-id="_153311954769460" v="true" name="gameId" id="_153311954769436">
+                <jpa:join-column name="GAME_ID" rc="GAME_ID" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </jpa:many-to-one>
+            <jpa:many-to-one connected-entity-id="_153311954769413" connected-attribute-id="_153311954769495" v="true" name="userId" id="_153311954769437">
+                <jpa:join-column name="USER_ID" rc="USER_ID" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </jpa:many-to-one>
+            <jpa:id attribute-type="Long" v="true" name="id" id="_153311954769435">
+                <jpa:column name="ID" unique="false" nullable="false" insertable="true" updatable="true" table="PLAYER_GAME_MAPPING"/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="PLAYER_GAME_MAPPING"/>
+    </jpa:entity>
+    <jpa:entity abs="false" class="PlayerTeamMapping" v="true" xre="false" m="false" rootElement="_15331195476781" id="_15331195476946">
+        <jpa:attributes>
+            <jpa:many-to-one connected-entity-id="_153311954769412" connected-attribute-id="_153311954769481" v="true" name="teamId" id="_153311954769439">
+                <jpa:join-column name="TEAM_ID" rc="TEAM_ID" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </jpa:many-to-one>
+            <jpa:many-to-one connected-entity-id="_153311954769413" connected-attribute-id="_153311954769496" v="true" name="userId" id="_153311954769440">
+                <jpa:join-column name="USER_ID" rc="USER_ID" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </jpa:many-to-one>
+            <jpa:id attribute-type="Long" v="true" name="id" id="_153311954769438">
+                <jpa:column name="ID" unique="false" nullable="false" insertable="true" updatable="true" table="PLAYER_TEAM_MAPPING"/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="PLAYER_TEAM_MAPPING"/>
+    </jpa:entity>
+    <jpa:entity abs="false" class="Session" v="true" xre="false" m="false" rootElement="_15331195476781" id="_15331195476947">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="httpSessionId" id="_153311954769442">
+                <jpa:column name="HTTP_SESSION_ID" unique="false" nullable="true" insertable="true" updatable="true" table="SESSION" length="250"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Short" v="true" name="isValid" id="_153311954769443">
+                <jpa:column name="IS_VALID" unique="false" nullable="true" insertable="true" updatable="true" table="SESSION"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.math.BigInteger" v="true" name="sessionStartTime" id="_153311954769444">
+                <jpa:column name="SESSION_START_TIME" unique="false" nullable="true" insertable="true" updatable="true" table="SESSION"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.math.BigInteger" v="true" name="sessionEndTime" id="_153311954769445">
+                <jpa:column name="SESSION_END_TIME" unique="false" nullable="true" insertable="true" updatable="true" table="SESSION"/>
+            </jpa:basic>
+            <jpa:many-to-one connected-entity-id="_153311954769413" connected-attribute-id="_153311954769497" v="true" name="userId" id="_153311954769446">
+                <jpa:join-column name="USER_ID" rc="USER_ID" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </jpa:many-to-one>
+            <jpa:id attribute-type="String" v="true" name="sessionId" id="_153311954769441">
+                <jpa:column name="SESSION_ID" unique="false" nullable="false" insertable="true" updatable="true" table="SESSION" length="200"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="SESSION"/>
+    </jpa:entity>
+    <jpa:entity abs="false" class="Notification" v="true" xre="false" m="false" rootElement="_15331195476781" id="_15331195476948">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="java.math.BigInteger" v="true" name="createdFor" id="_153311954769448">
+                <jpa:column name="CREATED_FOR" unique="false" nullable="true" insertable="true" updatable="true" table="NOTIFICATION"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Short" v="true" name="notificationType" id="_153311954769449">
+                <jpa:column name="NOTIFICATION_TYPE" unique="false" nullable="true" insertable="true" updatable="true" table="NOTIFICATION"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.math.BigInteger" v="true" name="whenCreated" id="_153311954769450">
+                <jpa:column name="WHEN_CREATED" unique="false" nullable="true" insertable="true" updatable="true" table="NOTIFICATION"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="title" id="_153311954769451">
+                <jpa:column name="TITLE" unique="false" nullable="true" insertable="true" updatable="true" table="NOTIFICATION" length="500"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="content" id="_153311954769452">
+                <jpa:column name="CONTENT" unique="false" nullable="true" insertable="true" updatable="true" table="NOTIFICATION" length="5000"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Short" v="true" name="isRead" id="_153311954769453">
+                <jpa:column name="IS_READ" unique="false" nullable="true" insertable="true" updatable="true" table="NOTIFICATION"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.math.BigInteger" v="true" name="whenRead" id="_153311954769454">
+                <jpa:column name="WHEN_READ" unique="false" nullable="true" insertable="true" updatable="true" table="NOTIFICATION"/>
+            </jpa:basic>
+            <jpa:many-to-one connected-entity-id="_153311954769413" connected-attribute-id="_153311954769498" v="true" name="createdBy" id="_153311954769455">
+                <jpa:join-column name="CREATED_BY" rc="USER_ID" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </jpa:many-to-one>
+            <jpa:id attribute-type="Long" v="true" name="notificationId" id="_153311954769447">
+                <jpa:column name="NOTIFICATION_ID" unique="false" nullable="false" insertable="true" updatable="true" table="NOTIFICATION"/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="NOTIFICATION"/>
+    </jpa:entity>
+    <jpa:entity abs="false" class="Game" v="true" xre="false" m="false" rootElement="_15331195476781" id="_15331195476949">
+        <jpa:attributes>
+            <jpa:basic optional="false" attribute-type="long" v="true" name="startTime" id="_153311954769457">
+                <jpa:column name="START_TIME" unique="false" nullable="false" insertable="true" updatable="true" table="GAME"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.math.BigInteger" v="true" name="endTime" id="_153311954769458">
+                <jpa:column name="END_TIME" unique="false" nullable="true" insertable="true" updatable="true" table="GAME"/>
+            </jpa:basic>
+            <jpa:one-to-many own="false" connected-entity-id="_15331195476943" connected-attribute-id="_153311954769431" v="true" name="eventsCollection" id="_153311954769459"/>
+            <jpa:one-to-many own="false" connected-entity-id="_15331195476945" connected-attribute-id="_153311954769436" v="true" name="playerGameMappingCollection" id="_153311954769460"/>
+            <jpa:id attribute-type="Long" v="true" name="gameId" id="_153311954769456">
+                <jpa:column name="GAME_ID" unique="false" nullable="false" insertable="true" updatable="true" table="GAME"/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="GAME"/>
+    </jpa:entity>
+    <jpa:entity abs="false" class="PlayerProfile" v="true" xre="false" m="false" rootElement="_15331195476781" id="_153311954769410">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="Double" v="true" name="height" id="_153311954769462">
+                <jpa:column name="HEIGHT" unique="false" nullable="true" insertable="true" updatable="true" table="PLAYER_PROFILE" precision="52"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Double" v="true" name="weight" id="_153311954769463">
+                <jpa:column name="WEIGHT" unique="false" nullable="true" insertable="true" updatable="true" table="PLAYER_PROFILE" precision="52"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Short" v="true" name="basketsScored" id="_153311954769464">
+                <jpa:column name="BASKETS_SCORED" unique="false" nullable="true" insertable="true" updatable="true" table="PLAYER_PROFILE"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Short" v="true" name="totalGames" id="_153311954769465">
+                <jpa:column name="TOTAL_GAMES" unique="false" nullable="true" insertable="true" updatable="true" table="PLAYER_PROFILE"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Short" v="true" name="fitbitEnabled" id="_153311954769466">
+                <jpa:column name="FITBIT_ENABLED" unique="false" nullable="true" insertable="true" updatable="true" table="PLAYER_PROFILE"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="fitbitClientId" id="_153311954769467">
+                <jpa:column name="FITBIT_CLIENT_ID" unique="false" nullable="true" insertable="true" updatable="true" table="PLAYER_PROFILE" length="20"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="role" id="_153311954769468">
+                <jpa:column name="ROLE" unique="false" nullable="true" insertable="true" updatable="true" table="PLAYER_PROFILE" length="20"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Short" v="true" name="isDeleted" id="_153311954769469">
+                <jpa:column name="IS_DELETED" unique="false" nullable="true" insertable="true" updatable="true" table="PLAYER_PROFILE"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.math.BigInteger" v="true" name="whenModified" id="_153311954769470">
+                <jpa:column name="WHEN_MODIFIED" unique="false" nullable="true" insertable="true" updatable="true" table="PLAYER_PROFILE"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.math.BigInteger" v="true" name="whenDeleted" id="_153311954769471">
+                <jpa:column name="WHEN_DELETED" unique="false" nullable="true" insertable="true" updatable="true" table="PLAYER_PROFILE"/>
+            </jpa:basic>
+            <jpa:one-to-one own="true" optional="false" connected-entity-id="_153311954769413" connected-attribute-id="_153311954769499" v="true" name="users" id="_153311954769472">
+                <jpa:join-column name="USER_ID" rc="USER_ID" unique="false" nullable="true" insertable="false" updatable="false"/>
+            </jpa:one-to-one>
+            <jpa:id attribute-type="Long" v="true" name="userId" id="_153311954769461">
+                <jpa:column name="USER_ID" unique="false" nullable="false" insertable="true" updatable="true" table="PLAYER_PROFILE"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="PLAYER_PROFILE"/>
+    </jpa:entity>
+    <jpa:entity abs="false" class="UserRoleMapping" v="true" xre="false" m="false" rootElement="_15331195476781" id="_153311954769411">
+        <jpa:attributes>
+            <jpa:many-to-one connected-entity-id="_153311954769413" connected-attribute-id="_1533119547694100" v="true" name="userId" id="_153311954769474">
+                <jpa:join-column name="USER_ID" rc="USER_ID" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </jpa:many-to-one>
+            <jpa:many-to-one connected-entity-id="_153311954769414" connected-attribute-id="_1533119547694103" v="true" name="roleId" id="_153311954769475">
+                <jpa:join-column name="ROLE_ID" rc="ROLE_ID" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </jpa:many-to-one>
+            <jpa:id attribute-type="Long" v="true" name="id" id="_153311954769473">
+                <jpa:column name="ID" unique="false" nullable="false" insertable="true" updatable="true" table="USER_ROLE_MAPPING"/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="USER_ROLE_MAPPING"/>
+    </jpa:entity>
+    <jpa:entity abs="false" class="Team" v="true" xre="false" m="false" rootElement="_15331195476781" id="_153311954769412">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="teamName" id="_153311954769477">
+                <jpa:column name="TEAM_NAME" unique="false" nullable="true" insertable="true" updatable="true" table="TEAM" length="200"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.math.BigInteger" v="true" name="whenCreated" id="_153311954769478">
+                <jpa:column name="WHEN_CREATED" unique="false" nullable="true" insertable="true" updatable="true" table="TEAM"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Short" v="true" name="isDeleted" id="_153311954769479">
+                <jpa:column name="IS_DELETED" unique="false" nullable="true" insertable="true" updatable="true" table="TEAM"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.math.BigInteger" v="true" name="whenDeleted" id="_153311954769480">
+                <jpa:column name="WHEN_DELETED" unique="false" nullable="true" insertable="true" updatable="true" table="TEAM"/>
+            </jpa:basic>
+            <jpa:one-to-many own="false" connected-entity-id="_15331195476946" connected-attribute-id="_153311954769439" v="true" name="playerTeamMappingCollection" id="_153311954769481"/>
+            <jpa:id attribute-type="Long" v="true" name="teamId" id="_153311954769476">
+                <jpa:column name="TEAM_ID" unique="false" nullable="false" insertable="true" updatable="true" table="TEAM"/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="TEAM"/>
+    </jpa:entity>
+    <jpa:entity abs="false" class="Users" v="true" xre="false" m="false" rootElement="_15331195476781" id="_153311954769413">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="firstName" id="_153311954769483">
+                <jpa:column name="FIRST_NAME" unique="false" nullable="true" insertable="true" updatable="true" table="USERS" length="100"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="lastName" id="_153311954769484">
+                <jpa:column name="LAST_NAME" unique="false" nullable="true" insertable="true" updatable="true" table="USERS" length="100"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="emailAddress" id="_153311954769485">
+                <jpa:column name="EMAIL_ADDRESS" unique="false" nullable="true" insertable="true" updatable="true" table="USERS" length="100"/>
+            </jpa:basic>
+            <jpa:basic optional="false" attribute-type="String" v="true" name="username" id="_153311954769486">
+                <jpa:column name="USERNAME" unique="false" nullable="false" insertable="true" updatable="true" table="USERS" length="20"/>
+            </jpa:basic>
+            <jpa:basic optional="false" attribute-type="String" v="true" name="password" id="_153311954769487">
+                <jpa:column name="PASSWORD" unique="false" nullable="false" insertable="true" updatable="true" table="USERS" length="1000"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Short" v="true" name="isPlayer" id="_153311954769488">
+                <jpa:column name="IS_PLAYER" unique="false" nullable="true" insertable="true" updatable="true" table="USERS"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Short" v="true" name="isLoggedin" id="_153311954769489">
+                <jpa:column name="IS_LOGGEDIN" unique="false" nullable="true" insertable="true" updatable="true" table="USERS"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Short" v="true" name="isDeleted" id="_153311954769490">
+                <jpa:column name="IS_DELETED" unique="false" nullable="true" insertable="true" updatable="true" table="USERS"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.math.BigInteger" v="true" name="whenCreated" id="_153311954769491">
+                <jpa:column name="WHEN_CREATED" unique="false" nullable="true" insertable="true" updatable="true" table="USERS"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.math.BigInteger" v="true" name="whenModified" id="_153311954769492">
+                <jpa:column name="WHEN_MODIFIED" unique="false" nullable="true" insertable="true" updatable="true" table="USERS"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.math.BigInteger" v="true" name="lastAccessed" id="_153311954769493">
+                <jpa:column name="LAST_ACCESSED" unique="false" nullable="true" insertable="true" updatable="true" table="USERS"/>
+            </jpa:basic>
+            <jpa:one-to-many own="false" connected-entity-id="_15331195476942" connected-attribute-id="_153311954769422" v="true" name="attachmentCollection" id="_153311954769494"/>
+            <jpa:one-to-many own="false" connected-entity-id="_15331195476945" connected-attribute-id="_153311954769437" v="true" name="playerGameMappingCollection" id="_153311954769495"/>
+            <jpa:one-to-many own="false" connected-entity-id="_15331195476946" connected-attribute-id="_153311954769440" v="true" name="playerTeamMappingCollection" id="_153311954769496"/>
+            <jpa:one-to-many own="false" connected-entity-id="_15331195476947" connected-attribute-id="_153311954769446" v="true" name="sessionCollection" id="_153311954769497"/>
+            <jpa:one-to-many own="false" connected-entity-id="_15331195476948" connected-attribute-id="_153311954769455" v="true" name="notificationCollection" id="_153311954769498"/>
+            <jpa:one-to-many own="false" connected-entity-id="_153311954769411" connected-attribute-id="_153311954769474" v="true" name="userRoleMappingCollection" id="_1533119547694100"/>
+            <jpa:one-to-one own="false" connected-entity-id="_153311954769410" connected-attribute-id="_153311954769472" v="true" name="playerProfile" id="_153311954769499"/>
+            <jpa:id attribute-type="Long" v="true" name="userId" id="_153311954769482">
+                <jpa:column name="USER_ID" unique="false" nullable="false" insertable="true" updatable="true" table="USERS"/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="USERS"/>
+    </jpa:entity>
+    <jpa:entity abs="false" class="UserRole" v="true" xre="false" m="false" rootElement="_15331195476781" id="_153311954769414">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="roleName" id="_1533119547694102">
+                <jpa:column name="ROLE_NAME" unique="false" nullable="true" insertable="true" updatable="true" table="USER_ROLE" length="200"/>
+            </jpa:basic>
+            <jpa:one-to-many own="false" connected-entity-id="_153311954769411" connected-attribute-id="_153311954769475" v="true" name="userRoleMappingCollection" id="_1533119547694103"/>
+            <jpa:id attribute-type="Long" v="true" name="roleId" id="_1533119547694101">
+                <jpa:column name="ROLE_ID" unique="false" nullable="false" insertable="true" updatable="true" table="USER_ROLE"/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="USER_ROLE"/>
+    </jpa:entity>
+    <jpa:snp loc="BEFORE_PACKAGE" e="true">/**
+ * This file was generated by the Jeddict
+ */</jpa:snp>
+</jpa:entity-mappings>

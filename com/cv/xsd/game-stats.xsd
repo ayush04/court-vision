@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.0"
+           targetNamespace="http://bindings.cv.com/ws/model/gen/gamestats" 
+           xmlns="http://bindings.cv.com/ws/model/gen/gamestats" 
+           elementFormDefault="qualified">
+  	
+    <xs:complexType name="gamestats" >
+        <xs:sequence>
+            <xs:element name="gamestatsData" type="gamestatsdata" minOccurs="1" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+	
+    <xs:complexType name="gamestatsdata">
+        <xs:sequence>
+            <xs:element name="gameId" type="xs:long" minOccurs="1" maxOccurs="1" />
+            <xs:element name="startTime" type="xs:long" minOccurs="1" maxOccurs="1" />
+            <xs:element name="endTime" type="xs:long" minOccurs="1" maxOccurs="1" />
+            <xs:element name="numberOfPasses" type="xs:int" minOccurs="1" maxOccurs="1" />
+            <xs:element name="successfulPasses" type="xs:int" minOccurs="1" maxOccurs="1" />
+            <xs:element name="topScorer" type="xs:long" minOccurs="1" maxOccurs="1" />
+            <xs:element name="gameScorers" type="gamescorersdata" minOccurs="1" maxOccurs="unbounded" />
+            <xs:element name="gamePasses" type="gamepassesdata" minOccurs="1" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="gamescorersdata">
+        <xs:sequence>
+            <xs:element name="playerId" type="xs:long" minOccurs="1" maxOccurs="1" />
+            <xs:element name="score" type="xs:int" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="gamepassesdata">
+        <xs:sequence>
+            <xs:element name="playerId" type="xs:long" minOccurs="1" maxOccurs="1" />
+            <xs:element name="passes" type="xs:int" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

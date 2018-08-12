@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.0"
+           targetNamespace="http://bindings.cv.com/ws/model/gen/profile" 
+           xmlns="http://bindings.cv.com/ws/model/gen/profile" 
+           elementFormDefault="qualified">
+  	
+    <xs:complexType name="profile">
+        <xs:sequence>
+            <xs:element name="profileData" type="profiledata" minOccurs="1" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+	
+    <xs:complexType name="profiledata">
+        <xs:sequence>
+            <xs:element name="userId" type="xs:long" minOccurs="1" maxOccurs="1" />
+            <xs:element name="height" type="xs:float" minOccurs="1" maxOccurs="1" />
+            <xs:element name="weight" type="xs:float" minOccurs="1" maxOccurs="1" />
+            <xs:element name="basketsScored" type="xs:int" minOccurs="1" maxOccurs="1" />
+            <xs:element name="totalGamesPlayed" type="xs:int" minOccurs="1" maxOccurs="1" />
+            <xs:element name="fitbitEnabled" type="xs:int" minOccurs="1" maxOccurs="1" />
+            <xs:element name="fitbitClientId" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="role" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="isDeleted" type="xs:int" minOccurs="1" maxOccurs="1" />
+            <xs:element name="whenModified" type="xs:long" minOccurs="1" maxOccurs="1" />
+            <xs:element name="whenDeleted" type="xs:long" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

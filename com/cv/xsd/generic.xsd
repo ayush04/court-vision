@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.0"
+           targetNamespace="http://bindings.cv.com/ws/model/gen/generic" 
+           xmlns="http://bindings.cv.com/ws/model/gen/generic" 
+           elementFormDefault="qualified">
+  	
+    <xs:complexType name="generic" >
+        <xs:sequence>
+            <xs:element name="genericData" type="genericdata" minOccurs="1" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+	
+    <xs:complexType name="genericdata">
+        <xs:sequence>
+            <xs:element name="key" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="value" type="xs:string" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
